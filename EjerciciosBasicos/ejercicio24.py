@@ -69,14 +69,8 @@ while menu:
         case "6":
             clear()
             print("Listado de todos los clientes ordenado por apellidos:")
-            listaApellidos=[]
-            for x in dicc_clientes.keys():
-                listaApellidos.append(dicc_clientes[x][1])
-            
-            
-            print(listaApellidos.sort())
-            
-            
+            listaOrdenada=sorted(dicc_clientes.items(),key=lambda item:item[1])
+            print(json.dumps(listaOrdenada,indent=4))
         case "7":
             clear()
             print("Fin del programa")
