@@ -69,8 +69,8 @@ while menu:
         case "6":
             clear()
             print("Listado de todos los clientes ordenado por apellidos:")
-            listaOrdenada=sorted(dicc_clientes.items(),key=lambda item:item[1])
-            print(json.dumps(listaOrdenada,indent=4))
+            listaOrdenada=sorted(dicc_clientes.items(),key=lambda item:item[1][1])
+            print(listaOrdenada)
         case "7":
             clear()
             print("Fin del programa")
