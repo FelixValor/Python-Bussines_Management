@@ -5,7 +5,7 @@ def clear():
 
 menu=True
 contador_dicc=1
-dicc_clientes={}
+dicc_clientes={"1233456":["felix","valor","calle amapola",12345678,"valorfelix@gmail.com",True]}
 esPreferente=True
 while menu:
     
@@ -70,7 +70,7 @@ while menu:
             clear()
             print("Listado de todos los clientes ordenado por apellidos:")
             listaOrdenada=sorted(dicc_clientes.items(),key=lambda item:item[1][1])
-            print(listaOrdenada)
+            print(json.dumps(listaOrdenada,indent=4))
         case "7":
             clear()
             print("Fin del programa")

@@ -34,4 +34,15 @@ while menu:
             print("a. Mostrar cuadrante al que pertenecen")
             print("b. Calcular vector")
             print("c. Calcular distancia")
-            
+            orden=input()
+            match orden:
+                case "a":
+                    print("Cuadrante")
+                    Punto.cuadrante()
+        case 2:
+            print("a. Calcular base")
+            print("b. Calcular altura")
+            print("c. Calcular area")
+        case 3:
+            print("fin del programa")
+            menu=False
