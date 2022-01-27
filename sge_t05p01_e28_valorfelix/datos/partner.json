@@ -1,4 +1,1 @@
-[{"fullname": "Felix Valor", "address": "Calle Castellanos 136", "phoneNumber": "6099767963", "email": "valorfelix@gmail.com", "listBikes": null, "family": null},
-    {"fullname": "pepe", "address": "aaaaa", "phoneNumber": "6099767963", "email": "pepe@gmail.com", "listBikes": null, "family": null},
-    {"fullname": "pepa", "address": "bbbbb", "phoneNumber": "6099767963", "email": "papa@gmail.com", "listBikes": null, "family": null},
-    {"fullname": "pepito", "address": "cccccc", "phoneNumber": "6099767963", "email": "pepito@gmail.com", "listBikes": null, "family": null}]
+[{"fullname": "Felix Valor", "address": "Calle Castellanos 136", "phoneNumber": "6099767963", "email": "valorfelix@gmail.com", "listBikes": null, "family": null}, {"fullname": "pepe", "address": "calle amapola 3", "phoneNumber": "12345678", "email": "pepe@gmail.com", "listBikes": null, "family": null}]

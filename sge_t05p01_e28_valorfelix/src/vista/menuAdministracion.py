@@ -1,4 +1,7 @@
+from src.modelo.Partner import User
 
+def printConsole(message):
+    print(message)
 
 def showMenu():
     print("--------------------------OPCIONES-----------------------------")
@@ -19,3 +22,20 @@ def showMenu():
 def showPartners(partners:dict):
     for x in partners:
         print(x["fullname"])
+
+def askForNewPartner():
+    print("Introduzca los datos necesarios para crear un nuevo socio:")
+    print("Nombre completo: ")
+    fullname=input()
+    print("Direccion: ")
+    address=input()
+    print("Numero de telefono: ")
+    phoneNumber=input()
+    print("Correo electronico: ")
+    email=input()
+    print("DNI: ")
+    dni=input()
+    print("Contraseña: ")
+    password=input()
+    newPartner=User(dni,password,None,None,fullname,address,phoneNumber,email)
+    return newPartner
