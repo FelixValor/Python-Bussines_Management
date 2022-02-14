@@ -1,1 +1,38 @@
-[{"DNI": "11111111K", "password": "1234", "lastAccesss": null, "isAdmin": null}, {"DNI": "12345678L", "password": "1234", "lastAccesss": null, "isAdmin": null}]
+[
+    {
+        "DNI": "11111111K",
+        "password": "admin",
+        "lastAccesss": null,
+        "isAdmin": true
+    },
+    {
+        "DNI": "12345678L",
+        "password": "1234",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "12345678H",
+        "password": "1234",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "123456J",
+        "password": "123456",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "asasas",
+        "password": "assas",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "1234567L",
+        "password": "a",
+        "lastAccesss": null,
+        "isAdmin": null
+    }
+]

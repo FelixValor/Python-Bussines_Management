@@ -1,3 +1,4 @@
+from src.util.JsonHandler import JsonHandler
 class Club:
     def __init__(self, name, CIF):
         self._name=name
@@ -8,4 +9,10 @@ class Club:
         self._totalBalance=None
     
     def listarSocios(self):
+        
         return self._listPartners
+
+    def isRealDNI(dni):
+        dicc=JsonHandler.readJSON("datos/user.json")
+        #for x in dicc:
+        #    AdminMenu.printConsole(x["DNI"])

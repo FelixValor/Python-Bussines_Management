@@ -9,3 +9,4 @@ class Events:
         self._price=price
         self._partnerListClub=partnerListClub
         
+    

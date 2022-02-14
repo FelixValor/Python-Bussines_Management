@@ -1,1 +1,50 @@
-[{"fullname": "Felix Valor", "address": "Calle Castellanos 136", "phoneNumber": "6099767963", "email": "valorfelix@gmail.com", "listBikes": null, "family": null}, {"fullname": "pepe", "address": "calle amapola 3", "phoneNumber": "12345678", "email": "pepe@gmail.com", "listBikes": null, "family": null}]
+[
+    {
+        "fullname": "Felix Valor",
+        "address": "Calle Castellanos 136",
+        "phoneNumber": "6099767963",
+        "email": "valorfelix@gmail.com",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "pepe",
+        "address": "calle amapola 3",
+        "phoneNumber": "12345678",
+        "email": "pepe@gmail.com",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "pepito palotes",
+        "address": "saddsaads",
+        "phoneNumber": "12345678",
+        "email": "kjasd@asddsa.com",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "juanito",
+        "address": "sasdfg",
+        "phoneNumber": "123456",
+        "email": "lkdklsdlkds",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "manolito",
+        "address": "sadassaa",
+        "phoneNumber": "saassss",
+        "email": "assas",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "a",
+        "address": "a",
+        "phoneNumber": "1",
+        "email": "a",
+        "listBikes": null,
+        "family": null
+    }
+]

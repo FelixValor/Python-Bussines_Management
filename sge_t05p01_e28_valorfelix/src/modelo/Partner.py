@@ -1,3 +1,4 @@
+
 class Partner:
     def __init__(self, fullName, address, phoneNumber,email):
         self._fullName=fullName

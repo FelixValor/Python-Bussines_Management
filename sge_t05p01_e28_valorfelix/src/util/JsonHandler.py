@@ -1,7 +1,9 @@
 import json
 
-from src.modelo.Partner import Partner
+
 class JsonHandler:
+
+
 
     def readJSON(fileName):
         fp=open(fileName,"r")
@@ -9,9 +11,15 @@ class JsonHandler:
         fp.close()
         return fileData
 
+
     def writeJSON(d:dict,filename):
         with open(filename, "r+") as file:
             data = json.load(file)
             data.append(d)
             file.seek(0)
-            json.dump(data, file)
+            json.dump(data, file,indent=4)
+
+    def insertFamilyInJSON(locationDNI,dniToAdd):
+            data=JsonHandler.readJSON("datos/partner.json")
+            data[locationDNI]["family"]=[dniToAdd]
+            print(data[locationDNI])
