@@ -1,21 +1,20 @@
 import sys
 from src.controlador.AdminController import AdminController
 from src.controlador.PartnerController import PartnerController
-from src.util.StartChecker import StartChecker
-from src.vista.PartnerMenu import PartnerMenu
-
+from src.util.Checker import Checker
 
 
 if __name__=="__main__":
+    Checker.checkFiles()
     args=sys.argv
     if len(args)==5 or len(args)==6:
         if "-u" in args[1]:
-            if StartChecker.checkDNILogin(args[2]):
+            if Checker.checkDNI(args[2]):
                 if "-p" in args[3]:
-                    if StartChecker.checkPassord(args[2],args[4]):
+                    if Checker.checkPassword(args[2],args[4]):
                         if len(args)==6:
                             if args[5]=="-A":
-                                if StartChecker.checkIsAdmin(args[2]):
+                                if Checker.checkIsAdmin(args[2]):
                                     controller=AdminController()
                                     controller.startMenu()
                                 else:
@@ -35,3 +34,4 @@ if __name__=="__main__":
             raise SystemExit(f"Introduzca -u para ejecutar")
     else:
         raise SystemExit(f"Minimo 4 argumentos")
+

@@ -1,0 +1,32 @@
+[
+    {
+        "eventDate": "11/11/2021",
+        "maxDateInscription": "11/10/2021",
+        "city": "Valdepenas",
+        "province": "Ciudad Realhgffghfgh",
+        "organizer": "11111111K",
+        "totalKM": "30",
+        "price": "10",
+        "partnerListClub": null
+    },
+    {
+        "eventDate": "11/11/2022",
+        "maxDateInscription": "11/11/2020",
+        "city": "Valdepenas",
+        "province": "Ciuddsasdads",
+        "organizer": "11111111K",
+        "totalKM": "30",
+        "price": "10",
+        "partnerListClub": null
+    },
+    {
+        "eventDate": "11/11/2022",
+        "maxDateInscription": "11/11/2020",
+        "city": "Valdepenas",
+        "province": "Ciuddsasdads",
+        "organizer": "12345678L",
+        "totalKM": "12",
+        "price": "4",
+        "partnerListClub": null
+    }
+]

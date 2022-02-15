@@ -1,9 +1,9 @@
 [
     {
-        "fullname": "Felix Valor",
-        "address": "Calle Castellanos 136",
-        "phoneNumber": "6099767963",
-        "email": "valorfelix@gmail.com",
+        "fullname": null,
+        "address": null,
+        "phoneNumber": null,
+        "email": null,
         "listBikes": null,
         "family": null
     },
@@ -44,6 +44,14 @@
         "address": "a",
         "phoneNumber": "1",
         "email": "a",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "psasaddsa",
+        "address": "ssadas",
+        "phoneNumber": "asasddsasad",
+        "email": "sadasddsa",
         "listBikes": null,
         "family": null
     }

@@ -1,16 +1,17 @@
+import json
 from re import A
 from src.modelo.Partner import Partner, User
+from src.modelo.Event import Event
 from src.util.JsonHandler import JsonHandler
 from src.vista.AdminMenu import AdminMenu
 import os
 def clear():
-    a=1
+    pass
     
 class AdminController:
 
     def __init__(self):
         pass
-
     def startMenu(self):
         menu = True
         while menu:
@@ -66,7 +67,14 @@ class AdminController:
                 case "5":
                     clear()
                 case "6":
-                    clear()
+                    e=AdminMenu.addEvent()
+                    newEvent=Event(e[0],e[1],e[2],e[3],e[4],e[5],e[6],None)
+                    if(os.path.isfile('datos/events.json')):
+                        dicc=Event.parseEventToJSON(newEvent)
+                        JsonHandler.writeJSON(dicc, "datos/events.json")
+                    else:
+                        dicc=[Event.parseEventToJSON(newEvent)]
+                        JsonHandler.createJSON(dicc, "datos/events.json")
                 case "7":
                     clear()
                 case "8":
