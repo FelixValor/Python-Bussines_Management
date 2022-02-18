@@ -22,7 +22,7 @@ if __name__=="__main__":
                             else:
                                 raise SystemExit(f"Debes introducir como ultimo parametro \"-A\"")
                         else:
-                            controller=PartnerController()
+                            controller=PartnerController(args[2])
                             controller.startMenu()
                     else:
                         raise SystemExit(f"La contraseña no coincide")

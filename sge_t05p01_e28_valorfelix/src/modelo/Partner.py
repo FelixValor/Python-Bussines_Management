@@ -6,13 +6,15 @@ class Partner:
         self._phoneNumber=phoneNumber
         self._email=email
         self._listBikes=None
-        self._family=None
+        self._family={"children":[],"fathers":[],"couple":""}
 
 
     def parsePartnerToJSON(self):
         dicc={"fullname":self._fullName,"address":self._address,"phoneNumber":self._phoneNumber,
                 "email":self._email,"listBikes":self._listBikes,"family":self._family}
         return dicc
+
+    
 
 class User:
     def __init__(self, dni,password,lastAccess,isAdmin,fullname,address,phoneNumber,email):

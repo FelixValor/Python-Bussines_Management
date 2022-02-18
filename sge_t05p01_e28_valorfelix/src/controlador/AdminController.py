@@ -1,9 +1,11 @@
-import json
-from re import A
+from src.modelo.Club import Club
 from src.modelo.Partner import Partner, User
 from src.modelo.Event import Event
 from src.util.JsonHandler import JsonHandler
 from src.vista.AdminMenu import AdminMenu
+import datetime
+from datetime import date
+
 import os
 def clear():
     pass
@@ -26,46 +28,76 @@ class AdminController:
                     clear()
                     p=AdminMenu.askForNewPartner()
                     newPartner=User(p[0],p[1],p[2],p[3],p[4],p[5],p[6],p[7])
-                    """if(self.verifyDNI(newPartner._dni)):
-                        JsonHandler.writeJSON(Partner.parsePartnerToJSON(Partner(newPartner._partner._fullName,newPartner._partner._address,newPartner._partner._phoneNumber,newPartner._partner._email)),"datos/partner.json") 
-                        JsonHandler.writeJSON(User.parseUserToJSON(User(newPartner._dni,newPartner._password,newPartner._isAdmin,newPartner._isAdmin,None,None,None,None)),"datos/user.json")
-                        print("bien")
-                    else:
-                        print("mal")"""
+                    
                     JsonHandler.writeJSON(Partner.parsePartnerToJSON(Partner(newPartner._partner._fullName,newPartner._partner._address,newPartner._partner._phoneNumber,newPartner._partner._email)),"datos/partner.json") 
                     JsonHandler.writeJSON(User.parseUserToJSON(User(newPartner._dni,newPartner._password,newPartner._isAdmin,newPartner._isAdmin,None,None,None,None)),"datos/user.json")
                 case "3":
                     clear()
                     data=AdminMenu.addToFamily()
-                    users=JsonHandler.readJSON("datos/user.json")
-                    dni1=0
-                    dni2=0
-                    posicion=0
-                    for x in users:
-                        if(x["DNI"]==data[0]):
-                            dni1=x["DNI"]
-                            dniLocation=posicion
-                        if(x["DNI"]==data[1]):
-                            dni2=x["DNI"]
-                        posicion=posicion+1
                     
-                    if(dni1!=dni2 and dni1!=0 and dni2!=0):
-                        print(dni1,"--->",dni2)
-                        familiar=""
-                        if(data[2]=="1"):
-                            familiar="hijo"
-                        elif(data[2]=="2"):
-                            familiar="pareja"
-                        elif(data[2]=="3"):
-                            familiar="padre"
-                        JsonHandler.insertFamilyInJSON(dniLocation,dni2)
-                    else:
-                        print("mal")
+                    dni1=data[0]
+                    dni2=data[1]
+                    familyType=data[2]
+                    partners=JsonHandler.readJSON("datos/partner.json")
+                    posDNI1=Club.whereIsDNI(dni1)
+                    posDNI2=Club.whereIsDNI(dni2)
+                    
+                    
+                    if familyType=="1":
+                        isAdded=False
+                        for x in partners[posDNI1]["family"]["children"]:
+                            if x==dni2:
+                                isAdded=True
+                                break
+                            
+                        if isAdded==False:
+                            partners[posDNI1]["family"]["children"].append(dni2)
+                            partners[posDNI2]["family"]["fathers"].append(dni1)
+                            JsonHandler.createJSON(partners,"datos/partner.json")
+                        else:
+                            AdminMenu.printErrorConsole("No puedes insertar 2 veces el mismo hijo")
+                    elif familyType=="2":
+                        isAdded=False
+                        for x in partners[posDNI1]["family"]["fathers"]:
+                            if x==dni2:
+                                isAdded=True
+                                break
+                        if isAdded==False:
+                            partners[posDNI1]["family"]["fathers"].append(dni2)
+                            partners[posDNI2]["family"]["children"].append(dni1)
+                            JsonHandler.createJSON(partners,"datos/partner.json")
+                        else:
+                            AdminMenu.printErrorConsole("No puedes insertar 2 veces el mismo padre")
+                    elif familyType=="3":
+                        if partners[posDNI1]["family"]["couple"]=="":
+                            if partners[posDNI2]["family"]["couple"]=="":
+                                partners[posDNI1]["family"]["couple"]=dni2
+                                partners[posDNI2]["family"]["couple"]=dni1
+                                JsonHandler.createJSON(partners,"datos/partner.json")
+                            else:
+                                p=partners[posDNI2]["fullname"]
+                                couple=partners[posDNI2]["family"]["couple"]
+                                AdminMenu.printErrorConsole("El socio con dni "+dni2+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
+                        else:
+                            p=partners[posDNI1]["fullname"]
+                            couple=partners[posDNI1]["family"]["couple"]
+                            AdminMenu.printErrorConsole("El socio con dni "+dni1+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
+
                 case "4":
                     clear()
-                    
+                    today=datetime.datetime.today()
+                    today=datetime.datetime.strftime(today,"%d/%m/%Y")
+                    today=datetime.datetime.strptime(today,"%d/%m/%Y")
+                    events=JsonHandler.readJSON("datos/events.json")
+                    for x in events:
+                        eventDate=x["eventDate"]
+                        eventDate=datetime.datetime.strptime(eventDate,"%d/%m/%Y")
+                        
+                        if eventDate>=today:
+                            AdminMenu.printConsole(Event(x["eventDate"],x["maxDateInscription"],
+                            x["city"],x["province"],x["organizer"],x["totalKM"],x["price"],x["partnerList"]))
                 case "5":
-                    clear()
+                    print("A")
                 case "6":
                     e=AdminMenu.addEvent()
                     newEvent=Event(e[0],e[1],e[2],e[3],e[4],e[5],e[6],None)

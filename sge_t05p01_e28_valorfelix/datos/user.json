@@ -40,5 +40,23 @@
         "password": "ggffg",
         "lastAccesss": null,
         "isAdmin": null
+    },
+    {
+        "DNI": "12345674",
+        "password": "2",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "123456K",
+        "password": "2134",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "09876H",
+        "password": "34567",
+        "lastAccesss": null,
+        "isAdmin": null
     }
 ]

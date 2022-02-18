@@ -1,32 +1,53 @@
 [
     {
-        "eventDate": "11/11/2021",
+        "eventDate": "15/02/2022",
         "maxDateInscription": "11/10/2021",
         "city": "Valdepenas",
         "province": "Ciudad Realhgffghfgh",
-        "organizer": "11111111K",
+        "organizer": "12345678H",
         "totalKM": "30",
         "price": "10",
-        "partnerListClub": null
+        "partnerList": [
+            "123456J",
+            "12345678L",
+            "12345678H"
+        ]
     },
     {
         "eventDate": "11/11/2022",
         "maxDateInscription": "11/11/2020",
         "city": "Valdepenas",
         "province": "Ciuddsasdads",
-        "organizer": "11111111K",
+        "organizer": "12345678H",
         "totalKM": "30",
         "price": "10",
-        "partnerListClub": null
+        "partnerList": [
+            "12345678H"
+        ]
     },
     {
-        "eventDate": "11/11/2022",
+        "eventDate": "11/11/2000",
         "maxDateInscription": "11/11/2020",
         "city": "Valdepenas",
         "province": "Ciuddsasdads",
         "organizer": "12345678L",
         "totalKM": "12",
         "price": "4",
-        "partnerListClub": null
+        "partnerList": [
+            "12345678L",
+            "12345678H"
+        ]
+    },
+    {
+        "eventDate": "12/05/2000",
+        "maxDateInscription": "12/03/2022",
+        "city": "a",
+        "province": "wwwww",
+        "organizer": "12345678H",
+        "totalKM": "12",
+        "price": "9",
+        "partnerList": [
+            "123456J"
+        ]
     }
 ]

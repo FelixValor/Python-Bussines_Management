@@ -22,7 +22,4 @@ class JsonHandler:
             file.seek(0)
             json.dump(data, file,indent=4)
 
-    def insertFamilyInJSON(locationDNI,dniToAdd):
-            data=JsonHandler.readJSON("datos/partner.json")
-            data[locationDNI]["family"]=[dniToAdd]
-            print(data[locationDNI])
+

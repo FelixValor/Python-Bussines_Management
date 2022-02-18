@@ -13,7 +13,15 @@
         "phoneNumber": "12345678",
         "email": "pepe@gmail.com",
         "listBikes": null,
-        "family": null
+        "family": {
+            "children": [
+                "12345678H"
+            ],
+            "fathers": [
+                "12345678H"
+            ],
+            "couple": "12345678H"
+        }
     },
     {
         "fullname": "pepito palotes",
@@ -21,7 +29,16 @@
         "phoneNumber": "12345678",
         "email": "kjasd@asddsa.com",
         "listBikes": null,
-        "family": null
+        "family": {
+            "children": [
+                "11111111K",
+                "12345678L"
+            ],
+            "fathers": [
+                "12345678L"
+            ],
+            "couple": "12345678L"
+        }
     },
     {
         "fullname": "juanito",
@@ -29,7 +46,11 @@
         "phoneNumber": "123456",
         "email": "lkdklsdlkds",
         "listBikes": null,
-        "family": null
+        "family": {
+            "children": [],
+            "fathers": [],
+            "couple": ""
+        }
     },
     {
         "fullname": "manolito",
@@ -54,5 +75,41 @@
         "email": "sadasddsa",
         "listBikes": null,
         "family": null
+    },
+    {
+        "fullname": "pepe2",
+        "address": "aaaa",
+        "phoneNumber": "123456787654",
+        "email": "saasasassa",
+        "listBikes": null,
+        "family": null
+    },
+    {
+        "fullname": "pepa",
+        "address": "saassas",
+        "phoneNumber": "12122112",
+        "email": "asdfgh",
+        "listBikes": null,
+        "family": {
+            "children": [],
+            "fathers": [
+                "09876H"
+            ],
+            "couple": "09876H"
+        }
+    },
+    {
+        "fullname": "alejandro",
+        "address": "asdfgh",
+        "phoneNumber": "12345678",
+        "email": "kljdsakjadskj",
+        "listBikes": null,
+        "family": {
+            "children": [
+                "123456K"
+            ],
+            "fathers": [],
+            "couple": "123456K"
+        }
     }
 ]
