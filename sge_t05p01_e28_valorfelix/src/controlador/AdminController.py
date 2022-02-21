@@ -1,3 +1,5 @@
+from calendar import month
+from turtle import position
 from src.modelo.Club import Club
 from src.modelo.Partner import Partner, User
 from src.modelo.Event import Event
@@ -41,21 +43,22 @@ class AdminController:
                     partners=JsonHandler.readJSON("datos/partner.json")
                     posDNI1=Club.whereIsDNI(dni1)
                     posDNI2=Club.whereIsDNI(dni2)
-                    
-                    
                     if familyType=="1":
-                        isAdded=False
-                        for x in partners[posDNI1]["family"]["children"]:
-                            if x==dni2:
-                                isAdded=True
-                                break
-                            
-                        if isAdded==False:
-                            partners[posDNI1]["family"]["children"].append(dni2)
-                            partners[posDNI2]["family"]["fathers"].append(dni1)
-                            JsonHandler.createJSON(partners,"datos/partner.json")
+                        if partners[posDNI1]["family"]["fathers"]==[]:
+                            isAdded=False
+                            for x in partners[posDNI1]["family"]["children"]:
+                                if x==dni2:
+                                    isAdded=True
+                                    break
+                                
+                            if isAdded==False:
+                                partners[posDNI1]["family"]["children"].append(dni2)
+                                partners[posDNI2]["family"]["fathers"].append(dni1)
+                                JsonHandler.createJSON(partners,"datos/partner.json")
+                            else:
+                                AdminMenu.printErrorConsole("No puedes insertar 2 veces el mismo hijo")
                         else:
-                            AdminMenu.printErrorConsole("No puedes insertar 2 veces el mismo hijo")
+                            AdminMenu.printErrorConsole("El socio ya esta integrado como hijo por lo que no puede tener hijos")
                     elif familyType=="2":
                         isAdded=False
                         for x in partners[posDNI1]["family"]["fathers"]:
@@ -63,26 +66,35 @@ class AdminController:
                                 isAdded=True
                                 break
                         if isAdded==False:
+                            if partners[posDNI2]["family"]["couple"]=="":
+                                print("no tiene pareja este padre")
+                            else:
+                                dniCouple=partners[posDNI2]["family"]["couple"]
+                                position=Club.whereIsDNI(dniCouple)
+                                partners[position]["family"]["children"].append(dni1)
+                                partners[posDNI1]["family"]["fathers"].append(dniCouple)
                             partners[posDNI1]["family"]["fathers"].append(dni2)
                             partners[posDNI2]["family"]["children"].append(dni1)
                             JsonHandler.createJSON(partners,"datos/partner.json")
                         else:
                             AdminMenu.printErrorConsole("No puedes insertar 2 veces el mismo padre")
                     elif familyType=="3":
-                        if partners[posDNI1]["family"]["couple"]=="":
-                            if partners[posDNI2]["family"]["couple"]=="":
-                                partners[posDNI1]["family"]["couple"]=dni2
-                                partners[posDNI2]["family"]["couple"]=dni1
-                                JsonHandler.createJSON(partners,"datos/partner.json")
+                        if partners[posDNI1]["family"]["fathers"]==[]:
+                            if partners[posDNI1]["family"]["couple"]=="":
+                                if partners[posDNI2]["family"]["couple"]=="":
+                                    partners[posDNI1]["family"]["couple"]=dni2
+                                    partners[posDNI2]["family"]["couple"]=dni1
+                                    JsonHandler.createJSON(partners,"datos/partner.json")
+                                else:
+                                    p=partners[posDNI2]["fullname"]
+                                    couple=partners[posDNI2]["family"]["couple"]
+                                    AdminMenu.printErrorConsole("El socio con dni "+dni2+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
                             else:
-                                p=partners[posDNI2]["fullname"]
-                                couple=partners[posDNI2]["family"]["couple"]
-                                AdminMenu.printErrorConsole("El socio con dni "+dni2+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
+                                p=partners[posDNI1]["fullname"]
+                                couple=partners[posDNI1]["family"]["couple"]
+                                AdminMenu.printErrorConsole("El socio con dni "+dni1+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
                         else:
-                            p=partners[posDNI1]["fullname"]
-                            couple=partners[posDNI1]["family"]["couple"]
-                            AdminMenu.printErrorConsole("El socio con dni "+dni1+"("+p+") ya tiene pareja ("+Club.whoIsDNI(couple)+")")
-
+                            AdminMenu.printErrorConsole("El socio ya esta integrado como hijo por lo que no puede tener pareja")
                 case "4":
                     clear()
                     today=datetime.datetime.today()
@@ -108,9 +120,11 @@ class AdminController:
                         dicc=[Event.parseEventToJSON(newEvent)]
                         JsonHandler.createJSON(dicc, "datos/events.json")
                 case "7":
-                    clear()
+                    pass
+                    
                 case "8":
-                    clear()
+                    self.applyFees()
+
                 case "9":
                     clear()
                 case "0":
@@ -133,5 +147,37 @@ class AdminController:
             AdminMenu.printConsole(x["fullname"])
 
 
+    def applyFees(self):
+        month=date.today().month
+        year=date.today().year
+        partners=JsonHandler.readJSON("datos/partner.json")
+        users=JsonHandler.readJSON("datos/user.json")
+        dicc={}
+        dniList=[]
+        for x in users:
+            pos=Club.whereIsDNI(x["DNI"])
+            if pos==0:
+                pass
+            else:
+                price=0
+                if month <= 6:
+                    price=15
+                else:
+                    price=8
 
+                
+                print(pos)
+                discount=0
+                
+                if partners[pos]["family"]["children"]!=[] or partners[pos]["family"]["fathers"]!=[]:
+                    discount=15
+                if partners[pos]["family"]["couple"]!="":
+                    discount=10
+                if partners[pos]["family"]["couple"]!="" and partners[pos]["family"]["children"]!=[]:
+                    discount=30
+
+                dniList.append({x["DNI"]:{"payday":"","isPayed":False,"price":price,"discount":discount}})
+        
+        dicc={year:dniList} 
+        JsonHandler.createJSON(dicc,"datos/fees.json")
 

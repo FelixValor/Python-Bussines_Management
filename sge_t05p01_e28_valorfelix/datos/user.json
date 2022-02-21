@@ -24,30 +24,6 @@
         "isAdmin": null
     },
     {
-        "DNI": "asasas",
-        "password": "assas",
-        "lastAccesss": null,
-        "isAdmin": null
-    },
-    {
-        "DNI": "1234567L",
-        "password": "a",
-        "lastAccesss": null,
-        "isAdmin": null
-    },
-    {
-        "DNI": "dffdfddfH",
-        "password": "ggffg",
-        "lastAccesss": null,
-        "isAdmin": null
-    },
-    {
-        "DNI": "12345674",
-        "password": "2",
-        "lastAccesss": null,
-        "isAdmin": null
-    },
-    {
         "DNI": "123456K",
         "password": "2134",
         "lastAccesss": null,
@@ -56,6 +32,18 @@
     {
         "DNI": "09876H",
         "password": "34567",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "34567890",
+        "password": "23456",
+        "lastAccesss": null,
+        "isAdmin": null
+    },
+    {
+        "DNI": "1234098",
+        "password": "87654",
         "lastAccesss": null,
         "isAdmin": null
     }

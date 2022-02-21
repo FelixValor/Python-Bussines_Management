@@ -14,12 +14,8 @@
         "email": "pepe@gmail.com",
         "listBikes": null,
         "family": {
-            "children": [
-                "12345678H"
-            ],
-            "fathers": [
-                "12345678H"
-            ],
+            "children": [],
+            "fathers": [],
             "couple": "12345678H"
         }
     },
@@ -30,13 +26,8 @@
         "email": "kjasd@asddsa.com",
         "listBikes": null,
         "family": {
-            "children": [
-                "11111111K",
-                "12345678L"
-            ],
-            "fathers": [
-                "12345678L"
-            ],
+            "children": [],
+            "fathers": [],
             "couple": "12345678L"
         }
     },
@@ -53,48 +44,16 @@
         }
     },
     {
-        "fullname": "manolito",
-        "address": "sadassaa",
-        "phoneNumber": "saassss",
-        "email": "assas",
-        "listBikes": null,
-        "family": null
-    },
-    {
-        "fullname": "a",
-        "address": "a",
-        "phoneNumber": "1",
-        "email": "a",
-        "listBikes": null,
-        "family": null
-    },
-    {
-        "fullname": "psasaddsa",
-        "address": "ssadas",
-        "phoneNumber": "asasddsasad",
-        "email": "sadasddsa",
-        "listBikes": null,
-        "family": null
-    },
-    {
-        "fullname": "pepe2",
-        "address": "aaaa",
-        "phoneNumber": "123456787654",
-        "email": "saasasassa",
-        "listBikes": null,
-        "family": null
-    },
-    {
         "fullname": "pepa",
         "address": "saassas",
         "phoneNumber": "12122112",
         "email": "asdfgh",
         "listBikes": null,
         "family": {
-            "children": [],
-            "fathers": [
-                "09876H"
+            "children": [
+                "34567890"
             ],
+            "fathers": [],
             "couple": "09876H"
         }
     },
@@ -106,10 +65,37 @@
         "listBikes": null,
         "family": {
             "children": [
-                "123456K"
+                "34567890"
             ],
             "fathers": [],
             "couple": "123456K"
+        }
+    },
+    {
+        "fullname": "pepito2",
+        "address": "lksaksklsa",
+        "phoneNumber": "1234567890",
+        "email": "jsadjhksdajkdsa",
+        "listBikes": null,
+        "family": {
+            "children": [],
+            "fathers": [
+                "123456K",
+                "09876H"
+            ],
+            "couple": ""
+        }
+    },
+    {
+        "fullname": "maria",
+        "address": "jasjkasjk",
+        "phoneNumber": "4567890",
+        "email": "klasjklsaklas",
+        "listBikes": null,
+        "family": {
+            "children": [],
+            "fathers": [],
+            "couple": ""
         }
     }
 ]

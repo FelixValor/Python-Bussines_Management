@@ -10,9 +10,7 @@ class Club:
         self._totalBalance=None
     
     def listarSocios(self):
-        
         return self._listPartners
-
 
     def whoIsDNI(dni):
         position=0
@@ -33,3 +31,4 @@ class Club:
                 position=i
             i=i+1
         return position
+

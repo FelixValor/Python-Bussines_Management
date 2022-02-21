@@ -1,0 +1,60 @@
+{
+    "2022": [
+        {
+            "12345678L": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 10
+            }
+        },
+        {
+            "12345678H": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 10
+            }
+        },
+        {
+            "123456J": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "123456K": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 30
+            }
+        },
+        {
+            "09876H": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 30
+            }
+        },
+        {
+            "34567890": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 15
+            }
+        },
+        {
+            "1234098": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        }
+    ]
+}

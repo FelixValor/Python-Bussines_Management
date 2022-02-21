@@ -38,7 +38,6 @@ class PartnerController:
                 case "0":
                     print("Programa finalizado")
                     menu=False
-
     def showEvents(events):
         count=0
         for x in events:
