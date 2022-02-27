@@ -1,33 +1,7 @@
 {
     "2021": [
         {
-            "12345678L": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 10
-            }
-        }
-    ],
-    "2022": [
-        {
-            "12345678L": {
-                "payday": "",
-                "isPayed": true,
-                "price": 15,
-                "discount": 10
-            }
-        },
-        {
-            "12345678H": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 10
-            }
-        },
-        {
-            "123456J": {
+            "74802209E": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,
@@ -35,23 +9,7 @@
             }
         },
         {
-            "123456K": {
-                "payday": "",
-                "isPayed": true,
-                "price": 15,
-                "discount": 30
-            }
-        },
-        {
-            "09876H": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 30
-            }
-        },
-        {
-            "34567890": {
+            "79567020S": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,
@@ -59,91 +17,37 @@
             }
         },
         {
-            "1234098": {
+            "71514321F": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,
-                "discount": 0
+                "discount": 15
+            }
+        }
+    ],
+    "2022": [
+        {
+            "74802209E": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 10
             }
         },
         {
-            "34567890K": {
+            "79567020S": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,
-                "discount": 0
+                "discount": 15
             }
         },
         {
-            "6666666K": {
+            "71514321F": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "99999999K": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "87654": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "jiji": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "jojo": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "dni to guapo": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "7272772": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "444": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
-            }
-        },
-        {
-            "5555555555555": {
-                "payday": "",
-                "isPayed": false,
-                "price": 15,
-                "discount": 0
+                "discount": 10
             }
         }
     ]

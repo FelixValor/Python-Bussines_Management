@@ -8,214 +8,43 @@
         "family": null
     },
     {
-        "fullname": "pepe",
-        "address": "calle amapola 3",
-        "phoneNumber": "12345678",
-        "email": "pepe@gmail.com",
+        "fullname": "Anastasia Perez",
+        "address": "lksdaklas",
+        "phoneNumber": "666666666",
+        "email": "ananstasia@gmail.com",
         "listBikes": null,
         "family": {
             "children": [],
             "fathers": [],
-            "couple": "12345678H"
+            "couple": "71514321F"
         }
     },
     {
-        "fullname": "pepito palotes",
-        "address": "saddsaads",
-        "phoneNumber": "12345678",
-        "email": "kjasd@asddsa.com",
+        "fullname": "Marcos Aguirre",
+        "address": "saassa",
+        "phoneNumber": "655555555",
+        "email": "marcos@gmail.com",
         "listBikes": null,
         "family": {
-            "children": [],
-            "fathers": [],
-            "couple": "12345678L"
-        }
-    },
-    {
-        "fullname": "juanito",
-        "address": "sasdfg",
-        "phoneNumber": "123456",
-        "email": "lkdklsdlkds",
-        "listBikes": null,
-        "family": {
-            "children": [],
+            "children": [
+                "71514321F"
+            ],
             "fathers": [],
             "couple": ""
         }
     },
     {
-        "fullname": "pepa",
-        "address": "saassas",
-        "phoneNumber": "12122112",
-        "email": "asdfgh",
-        "listBikes": null,
-        "family": {
-            "children": [
-                "34567890"
-            ],
-            "fathers": [],
-            "couple": "09876H"
-        }
-    },
-    {
-        "fullname": "alejandro",
-        "address": "asdfgh",
-        "phoneNumber": "12345678",
-        "email": "kljdsakjadskj",
-        "listBikes": null,
-        "family": {
-            "children": [
-                "34567890"
-            ],
-            "fathers": [],
-            "couple": "123456K"
-        }
-    },
-    {
-        "fullname": "pepito2",
-        "address": "lksaksklsa",
-        "phoneNumber": "1234567890",
-        "email": "jsadjhksdajkdsa",
+        "fullname": "Martina Gonzalez",
+        "address": "saas",
+        "phoneNumber": "6777777777",
+        "email": "martina@gmail.com",
         "listBikes": null,
         "family": {
             "children": [],
             "fathers": [
-                "123456K",
-                "09876H"
+                "79567020S"
             ],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "maria",
-        "address": "jasjkasjk",
-        "phoneNumber": "4567890",
-        "email": "klasjklsaklas",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "alvaro",
-        "address": "sddsa",
-        "phoneNumber": "ds",
-        "email": "sd",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "el rompedor de JSON",
-        "address": "sasasa",
-        "phoneNumber": "212112",
-        "email": "sasasa",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "EUSTAQUIO",
-        "address": "asklsaklas",
-        "phoneNumber": "jsjsjs",
-        "email": "jsdjdsj",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "pepaso",
-        "address": "jsjs",
-        "phoneNumber": "12345678",
-        "email": "hdhdhd",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "pepitoooooo",
-        "address": "jdjdjdj",
-        "phoneNumber": "23456789",
-        "email": "jkdsjksd",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "pepitaaaaaaaa",
-        "address": "asassa",
-        "phoneNumber": "assaas",
-        "email": "asasas",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "joseeeee",
-        "address": "saas",
-        "phoneNumber": "3456789",
-        "email": "jsjsj",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "aantonio",
-        "address": "kldsklds",
-        "phoneNumber": "lksdklds",
-        "email": "kjlsdkjl",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "rodolfo",
-        "address": "lksaklas",
-        "phoneNumber": "kjsakjas",
-        "email": "kjasjkla",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
-        }
-    },
-    {
-        "fullname": "joaquin",
-        "address": "ksjkas",
-        "phoneNumber": "saassa",
-        "email": "saasas",
-        "listBikes": null,
-        "family": {
-            "children": [],
-            "fathers": [],
-            "couple": ""
+            "couple": "74802209E"
         }
     }
 ]

@@ -12,12 +12,4 @@
     6. meter a C como hijo de B (de A se hara automaticamente)
     7. ver eventos y al crear un evento la fecha de inscripcion debe de ser anterior a la del propio evento
 
-    --------------------COSAS POR TERMINAR-------------------------
-    -controlar las fechas de ultimo acceso
-    -cuando un socio inicie sesion almacenar la fecha actual en el fichero user.json
-    -crear funcion en la clase Checker para comprobar si ha pagado el socio(funcion con un parametro dni, con el que comprobar si ha pagado, si no, comprueba si ha entrado en los ultimos 30 dias) ademas informa al socio de que tiene que pagar
-    -al crear los socios, preguntar si este es admin o no
-    -hacer la opcion 7 del apartado de socios, (VER FAMILIAS)
-    -hacer la opcion 5 del apartado de admin, (BUSCAR EVENTOS POR FECHA)
 
-    

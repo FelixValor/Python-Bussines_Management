@@ -22,7 +22,7 @@ class User:
         self._dni=dni
         self._password=password
         self._lastAccess=None
-        self._isAdmin=None
+        self._isAdmin=isAdmin
 
 #contemmplar aqui si el cliente esta al corriente del pago
     def parseUserToJSON(self):

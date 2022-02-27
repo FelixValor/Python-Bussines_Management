@@ -75,20 +75,61 @@ class AdminMenu:
             
 
     def askForNewPartner():
+        
         print(bcolors.OKBLUE+"Introduzca los datos necesarios para crear un nuevo socio:"+bcolors.ENDC)
         print(bcolors.OKCYAN+"Nombre completo: "+bcolors.ENDC)
         fullname=input()
+        
         print(bcolors.OKCYAN+"Direccion: "+bcolors.ENDC)
         address=input()
-        print(bcolors.OKCYAN+"Numero de telefono: "+bcolors.ENDC)
-        phoneNumber=input()
-        print(bcolors.OKCYAN+"Correo electronico: "+bcolors.ENDC)
-        email=input()
-        print(bcolors.OKCYAN+"DNI: "+bcolors.ENDC)
-        dni=input()
+        valid=False
+        while(valid==False):
+            print(bcolors.OKCYAN+"Numero de telefono: "+bcolors.ENDC)
+            phoneNumber=input()
+            if Checker.verifyPhone(phoneNumber):
+                valid=True
+            else:
+                print(bcolors.FAIL+"Introduzca un numero de telefono valido"+bcolors.ENDC)
+        
+        valid=False
+        while(valid==False):
+            print(bcolors.OKCYAN+"Correo electronico: "+bcolors.ENDC)
+            email=input()
+            if Checker.isValidEmail(email):
+                valid=True
+            else:
+                print(bcolors.FAIL+"Introduzca un email valido"+bcolors.ENDC)
+
+        valid=False
+        while(valid==False):
+            print(bcolors.OKCYAN+"DNI: "+bcolors.ENDC)
+            dni=input()
+            
+            if Checker.checkDNI(dni):
+                print(bcolors.FAIL+"Introduzca un DNI que no exista previamente en el sistema"+bcolors.ENDC)
+            else:
+                if Checker.verifyDNI(dni):
+                    valid=True
+                else:
+                    print(bcolors.FAIL+"Introduzca un DNI valido"+bcolors.ENDC)
+                
+        
         print(bcolors.OKCYAN+"Contraseña: "+bcolors.ENDC)
         password=input()
-        newPartner=[dni,password,None,None,fullname,address,phoneNumber,email]
+        
+        valid=False
+        isAdmin=False
+        while(valid==False):
+            print(bcolors.OKCYAN+"¿Es administrador?(S/N) "+bcolors.ENDC)
+            answer=input()
+            if answer.lower()=="s" or answer.lower()=="n":
+                if answer.lower()=="s":
+                    isAdmin=True
+                valid=True
+            else:
+                print(bcolors.FAIL+"Introduzca una respuesta valida (S/)"+bcolors.ENDC)
+
+        newPartner=[dni,password,None,isAdmin,fullname,address,phoneNumber,email]
         return newPartner
 
     def addToFamily():
@@ -176,3 +217,5 @@ class AdminMenu:
         
         data=[eventDate,maxDateInscription,city,province,organizer,totalKM,price]
         return data
+
+    

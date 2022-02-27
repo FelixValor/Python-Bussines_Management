@@ -1,7 +1,9 @@
+from src.util.Checker import Checker
 from src.util.JsonHandler import JsonHandler
 from src.vista.PartnerMenu import PartnerMenu
 from src.modelo.Event import Event
 from src.modelo.Club import Club
+from datetime import date
 
 class PartnerController:
 
@@ -10,6 +12,10 @@ class PartnerController:
         
 
     def startMenu(self):
+        print(Checker.userHasPaid(self.userLogged))
+        users=JsonHandler.readJSON("datos/user.json")
+        users[Club.whereIsDNI(self.userLogged)]["lastAccesss"]=date.today().strftime("%d/%m/%Y")
+        JsonHandler.createJSON(users,"datos/user.json")
         menu = True
         while menu:
             
