@@ -14,7 +14,6 @@ class JsonHandler:
             with open(filename, "w") as file:
                 json.dump(d, file,indent=4)
 
-
     def writeJSON(d:dict,filename):
         with open(filename, "r+") as file:
             data = json.load(file)

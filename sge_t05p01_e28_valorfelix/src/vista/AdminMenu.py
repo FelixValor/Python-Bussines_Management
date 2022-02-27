@@ -60,6 +60,19 @@ class AdminMenu:
             input("Pulse intro para continuar...")
         return order
 
+    def askForDNIToPay():
+        b=True
+        while(b):
+            print(bcolors.OKBLUE+"Introduce el DNI del socio que va a pagar su cuota: "+bcolors.ENDC)
+            dni=input()
+            if(Checker.checkDNI(dni) and dni!="11111111K"):
+                b=False
+            elif dni=="11111111K":
+                print(bcolors.FAIL+"El administrador no tiene que pagar cuotas"+bcolors.ENDC)
+            else:
+                print(bcolors.FAIL+"Introduzca un DNI existente"+bcolors.ENDC)
+        return dni
+            
 
     def askForNewPartner():
         print(bcolors.OKBLUE+"Introduzca los datos necesarios para crear un nuevo socio:"+bcolors.ENDC)
@@ -112,6 +125,10 @@ class AdminMenu:
         data=[dni,familyDNI,familytype]
         return data
 
+    def askForYearFees():
+        print(bcolors.OKCYAN+"Introduzca el año que desea ver del control de cuotas:"+bcolors.ENDC)
+        year=input()
+        return year
     def addEvent():
         valid=False
         while(valid==False):

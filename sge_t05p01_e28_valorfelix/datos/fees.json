@@ -1,9 +1,19 @@
 {
-    "2022": [
+    "2021": [
         {
             "12345678L": {
                 "payday": "",
                 "isPayed": false,
+                "price": 15,
+                "discount": 10
+            }
+        }
+    ],
+    "2022": [
+        {
+            "12345678L": {
+                "payday": "",
+                "isPayed": true,
                 "price": 15,
                 "discount": 10
             }
@@ -27,7 +37,7 @@
         {
             "123456K": {
                 "payday": "",
-                "isPayed": false,
+                "isPayed": true,
                 "price": 15,
                 "discount": 30
             }
@@ -50,6 +60,86 @@
         },
         {
             "1234098": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "34567890K": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "6666666K": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "99999999K": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "87654": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "jiji": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "jojo": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "dni to guapo": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "7272772": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "444": {
+                "payday": "",
+                "isPayed": false,
+                "price": 15,
+                "discount": 0
+            }
+        },
+        {
+            "5555555555555": {
                 "payday": "",
                 "isPayed": false,
                 "price": 15,

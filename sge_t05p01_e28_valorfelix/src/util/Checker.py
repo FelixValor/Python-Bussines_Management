@@ -55,3 +55,5 @@ class Checker:
                 if x["eventDate"]==date:
                     correct=True
         return correct
+
+    

@@ -30,9 +30,24 @@ class AdminController:
                     clear()
                     p=AdminMenu.askForNewPartner()
                     newPartner=User(p[0],p[1],p[2],p[3],p[4],p[5],p[6],p[7])
-                    
                     JsonHandler.writeJSON(Partner.parsePartnerToJSON(Partner(newPartner._partner._fullName,newPartner._partner._address,newPartner._partner._phoneNumber,newPartner._partner._email)),"datos/partner.json") 
                     JsonHandler.writeJSON(User.parseUserToJSON(User(newPartner._dni,newPartner._password,newPartner._isAdmin,newPartner._isAdmin,None,None,None,None)),"datos/user.json")
+
+                    year=date.today().year
+                    month=date.today().month
+                    price=0
+                    if month <= 6:
+                        price=15
+                    else:
+                        price=8
+                    fees=JsonHandler.readJSON("datos/fees.json")
+                    feesOfActualYear=fees.get(str(year))
+                    feesOfActualYear.append({newPartner._dni:{"payday":"","isPayed":False,"price":price,"discount":0}})
+                    
+                    fees[str(year)]=feesOfActualYear
+                    JsonHandler.createJSON(fees,"datos/fees.json")
+                    
+                    
                 case "3":
                     clear()
                     data=AdminMenu.addToFamily()
@@ -120,13 +135,34 @@ class AdminController:
                         dicc=[Event.parseEventToJSON(newEvent)]
                         JsonHandler.createJSON(dicc, "datos/events.json")
                 case "7":
-                    pass
-                    
+                    year=AdminMenu.askForYearFees()
+                    fees=JsonHandler.readJSON("datos/fees.json")
+                    users=JsonHandler.readJSON("datos/user.json")
+                    selectedYearFees=fees.get(str(year))
+                    usersDNIList=[]
+                    for y in users:
+                        usersDNIList.append(y["DNI"])
+                    i=1
+                    for x in selectedYearFees:
+                        dni=usersDNIList[i]
+                        price=x[dni]["price"]
+                        discount=x[dni]["discount"]
+                        if discount==0:
+                            message=(Club.whoIsDNI(dni)+" tiene que pagar "+str(price))
+                            AdminMenu.printConsole(message)
+                        else:
+                            finalPrice=price-(price*discount/100)
+                            message=(Club.whoIsDNI(dni)+" tiene que pagar "+str(finalPrice))
+                            AdminMenu.printConsole(message)
+                        i=i+1
                 case "8":
                     self.applyFees()
-
                 case "9":
-                    clear()
+                    year=date.today().year
+                    dni=AdminMenu.askForDNIToPay()
+                    fees=JsonHandler.readJSON("datos/fees.json")
+                    fees.get(str(year))[Club.whereIsDNI(dni)-1][dni]["isPayed"]=True
+                    JsonHandler.createJSON(fees,"datos/fees.json")
                 case "0":
                     print("Programa finalizado")
                     menu=False
@@ -143,8 +179,16 @@ class AdminController:
         return respuesta
 
     def showPartners(self,partners:dict):
+        listOfNames=[]
         for x in partners:
-            AdminMenu.printConsole(x["fullname"])
+            if(x["fullname"]==None):
+                pass
+            else:
+                listOfNames.append(x["fullname"].lower())
+
+        listOfNames.sort()
+        for y in listOfNames:
+            AdminMenu.printConsole(y)
 
 
     def applyFees(self):
@@ -152,7 +196,6 @@ class AdminController:
         year=date.today().year
         partners=JsonHandler.readJSON("datos/partner.json")
         users=JsonHandler.readJSON("datos/user.json")
-        dicc={}
         dniList=[]
         for x in users:
             pos=Club.whereIsDNI(x["DNI"])
@@ -164,8 +207,6 @@ class AdminController:
                     price=15
                 else:
                     price=8
-
-                
                 print(pos)
                 discount=0
                 
@@ -177,7 +218,7 @@ class AdminController:
                     discount=30
 
                 dniList.append({x["DNI"]:{"payday":"","isPayed":False,"price":price,"discount":discount}})
-        
-        dicc={year:dniList} 
-        JsonHandler.createJSON(dicc,"datos/fees.json")
+        fees=JsonHandler.readJSON("datos/fees.json")
+        fees[str(year)]=dniList 
+        JsonHandler.createJSON(fees,"datos/fees.json")
 
